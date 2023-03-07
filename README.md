@@ -36,6 +36,13 @@ $ python3 serialmidi.py --serial_name=/dev/cu.SLAB_USBtoUART --midi_in_name="IAC
 WINDOWS example
 $ python.exe .\serialmidi.py --serial_name=COM4 --midi_in_name="loopMIDI Port IN 0" --midi_out_name="loopMIDI Port OUT 2"
 ```
+For Malmo University's MAC computers, it is very likely that the default configuration will be:
+
+```
+MAC OS X / Linux example
+$ python3 serialmidi.py --serial_name=/dev/cu.usbmodem2101 --midi_in_name="IAC Buss 1" --midi_out_name="IAC Buss 1"
+```
+
 6. Open your midi instrument, at MaU it is Ableton Live, open the example provided by your teacher, and check whether it produces sound.
 
 ## Testing the setup
