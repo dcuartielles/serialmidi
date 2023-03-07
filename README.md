@@ -16,7 +16,7 @@ This script needs [python-rtmidi](https://pypi.org/project/python-rtmidi/), [PyS
 1. Install Python 3 (MACs come with this by default)
 2. Install pip (MACs come with this by default)
 3. In a terminal window, execute `pip3 install python-rtmidi`
-4. In a terminal window, execute `pip install pyserial`
+4. In a terminal window, execute `pip3 install pyserial`
 5. Download `serialmidi.py` from [this link](https://raw.githubusercontent.com/dcuartielles/serialmidi/master/serialmidi.py) in the repository, copy it in a folder of your liking
 
 ## Quickstart
