@@ -1,31 +1,41 @@
 
-This command line script establishes Serial to MIDI bridge.
-It will be useful with micro controller boards such as Arduino, ESP32, they only have UART-USB interface.
+# SerialMidi
 
-I made this since useful [Hairless MIDI Serial bridge](https://github.com/projectgus/hairless-midiserial) program stopped working with OS X Catalina.
+Command line script to bridge Serial to MIDI.
 
-It processes most of MIDI messages. It has only very low latency (probably less than 5ms) so far.
+Code and original instructions by **raspy135** at the [serialmidi repository](https://github.com/raspy135/serialmidi)
 
-### Requirements / Installation
+Works with any micro controller boards such as Arduino, ESP32, using their UART-USB interface.
+
+Processes most of MIDI messages. Has very low latency (probably less than 5ms).
+
+## Requirements / Installation
 
 This script needs [python-rtmidi](https://pypi.org/project/python-rtmidi/), [PySerial](https://pypi.org/project/pyserial/) and Python 3.
 
-1. Install Python 3
-2. Install pip
-3. `pip install python-rtmidi`
-4. `pip install pyserial`
-5. Download `serialmidi.py`
+1. Install Python 3 (MACs come with this by default)
+2. Install pip (MACs come with this by default)
+3. In a terminal window, execute `pip3 install python-rtmidi`
+4. In a terminal window, execute `pip install pyserial`
+5. Download `serialmidi.py` from [this link]() in the repository, copy it in a folder of your liking
 
 ## Quickstart
+
+1. In a terminal window, navigate to the folder where you downloaded the `serialmidi.py` program using `cd NAME_OF_FOLDER`
+2. Using the Arduino IDE, identify the port your Arduino is connected to. In MAC OS X, the port will be called `/dev/cu.usbmodemXXX`, in Windows `COMXXX` and in Linux `/dev/ttyACMXXX`, where `XXX` represents a unique identifying number.
+3. Make sure your microcontroller board is running a code that could be used to trigger your midi device. For example, the [following code example]() is used at Malmo University, Sweden, to convert an Arduino Uno into a midi device interfacing Ableton Live.
+4. Configure your virtual midi device input / ouput in your computer so that the port name is `IAC` for MAC or `loopMIDI` for Windows. Check the small details that might affect the configuration, i.e. in Swedish computers, the communication bus is called `Buss` (with two `s`).
+5. In a terminal window, and depending on your operating system, use the following code to start the communication, change `SLAB_USBtoUART` to correspond the serial port you will be using.
+
 ```
-MAC OS X example
+MAC OS X / Linux example
 $ python3 serialmidi.py --serial_name=/dev/cu.SLAB_USBtoUART --midi_in_name="IAC Bus 1" --midi_out_name="IAC Bus 2"
 
 WINDOWS example
 $ python.exe .\serialmidi.py --serial_name=COM4 --midi_in_name="loopMIDI Port IN 0" --midi_out_name="loopMIDI Port OUT 2"
 ```
 
-## setup
+## Testing the setup
 
 1. Run `serialmidi.py -h` to see this help.
 ```
@@ -58,10 +68,10 @@ You may want to use MIDI loop bus such as IAC Bus for OS X, or [loopMIDI](https:
 5. If it is not working, try `--debug` option. It will dump all incoming / outgoing MIDI messages. Or create an issue on the GitHub page.
 
 
-### Tested environment
+## Tested environment
 - Tested with OS X Catalina with ESP32 board, and Windows10 with loopMIDI.
 
-### Other notes
-- It's made for my ESP32 based synthesizer, so I tested MIDI IN a lot, but MIDI OUT. MIDI OUT message processing might have some bugs. Please let me know if you find it.
+## Disclaimer
+- It's originally made for a DIY ESP32-based synthesizer, MIDI IN has been extensively tested, but MIDI OUT might throw some errors.
 
 
