@@ -9,6 +9,8 @@ Works with any micro controller boards such as Arduino, ESP32, using their UART-
 
 Processes most of MIDI messages. Has very low latency (probably less than 5ms).
 
+This is aimed at being used with Ableton Live at Malmo University's sound design courses.
+
 ## Requirements / Installation
 
 This script needs [python-rtmidi](https://pypi.org/project/python-rtmidi/), [PySerial](https://pypi.org/project/pyserial/) and Python 3.
@@ -34,6 +36,7 @@ $ python3 serialmidi.py --serial_name=/dev/cu.SLAB_USBtoUART --midi_in_name="IAC
 WINDOWS example
 $ python.exe .\serialmidi.py --serial_name=COM4 --midi_in_name="loopMIDI Port IN 0" --midi_out_name="loopMIDI Port OUT 2"
 ```
+6. Open your midi instrument, at MaU it is Ableton Live, open the example provided by your teacher, and check whether it produces sound.
 
 ## Testing the setup
 
