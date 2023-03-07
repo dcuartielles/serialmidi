@@ -23,7 +23,7 @@ This script needs [python-rtmidi](https://pypi.org/project/python-rtmidi/), [PyS
 
 1. In a terminal window, navigate to the folder where you downloaded the `serialmidi.py` program using `cd NAME_OF_FOLDER`
 2. Using the Arduino IDE, identify the port your Arduino is connected to. In MAC OS X, the port will be called `/dev/cu.usbmodemXXX`, in Windows `COMXXX` and in Linux `/dev/ttyACMXXX`, where `XXX` represents a unique identifying number.
-3. Make sure your microcontroller board is running a code that could be used to trigger your midi device. For example, the [following code example]() is used at Malmo University, Sweden, to convert an Arduino Uno into a midi device interfacing Ableton Live.
+3. Make sure your microcontroller board is running a code that could be used to trigger your midi device. For example, the [following code example](https://raw.githubusercontent.com/dcuartielles/serialmidi/master/SlumpMusikGenerator.ino) is used at Malmo University, Sweden, to convert an Arduino Uno into a midi device interfacing Ableton Live.
 4. Configure your virtual midi device input / ouput in your computer so that the port name is `IAC` for MAC or `loopMIDI` for Windows. Check the small details that might affect the configuration, i.e. in Swedish computers, the communication bus is called `Buss` (with two `s`).
 5. In a terminal window, and depending on your operating system, use the following code to start the communication, change `SLAB_USBtoUART` to correspond the serial port you will be using.
 
