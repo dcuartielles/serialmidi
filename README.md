@@ -70,6 +70,15 @@ You may want to use MIDI loop bus such as IAC Bus for OS X, or [loopMIDI](https:
 
 5. If it is not working, try `--debug` option. It will dump all incoming / outgoing MIDI messages. Or create an issue on the GitHub page.
 
+## Troubleshooting
+
+### MAC OS X
+
+If, when running any Python commands (such as `Python3` or `pip3`) your computer throws the error: `xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), ...` this means that you don't have any development tools installed. They are for free, install them using:
+
+`xcode-select --install` 
+
+in a terminal window. This will install all of the command line tools needed for development, including Python3, which is the basic requirement for **serialmidi** to work.
 
 ## Tested environment
 - Tested with OS X Catalina with ESP32 board, and Windows10 with loopMIDI.
